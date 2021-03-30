@@ -1,114 +1,99 @@
-// Copyright [2021] <Antonio S Montagner>
-#ifndef STRUCTURES_ARRAY_QUEUE_H
-#define STRUCTURES_ARRAY_QUEUE_H
+//! Copyright [year] <Copyright Owner>
+#ifndef STRUCTURES_LINKED_LIST_H
+#define STRUCTURES_LINKED_LIST_H
 
-#include <cstdint>  // std::size_t
-#include <stdexcept>  // C++ Exceptions
+#include <cstdint>
+
 
 namespace structures {
 
+//! ...
 template<typename T>
-class ArrayQueue {
+class LinkedList {
  public:
-    ArrayQueue();  // construtor padrão
-    explicit ArrayQueue(std::size_t max);  //! construtor com parametro
-    ~ArrayQueue();  //! destrutor padrao
-    void enqueue(const T &data);  //! metodo enfileirar
-    T dequeue();  //! metodo desenfileirar
-    T& back();  //! metodo retorna o ultimo
-    void clear();  //! metodo limpa a fila
-    std::size_t size();  //! metodo retorna tamanho atual
-    std::size_t max_size();  //! metodo retorna tamanho maximo
-    bool empty();  //! metodo verifica se vazio
-    bool full();  //! metodo verifica se esta cheio
+    //! ...
+    LinkedList();  // construtor padrão
+    //! ...
+    ~LinkedList();  // destrutor
+    //! ...
+    void clear();  // limpar lista
+    //! ...
+    void push_back(const T& data);  // inserir no fim
+    //! ...
+    void push_front(const T& data);  // inserir no início
+    //! ...
+    void insert(const T& data, std::size_t index);  // inserir na posição
+    //! ...
+    void insert_sorted(const T& data);  // inserir em ordem
+    //! ...
+    T& at(std::size_t index);  // acessar um elemento na posição index
+    //! ...
+    T pop(std::size_t index);  // retirar da posição
+    //! ...
+    T pop_back();  // retirar do fim
+    //! ...
+    T pop_front();  // retirar do início
+    //! ...
+    void remove(const T& data);  // remover específico
+    //! ...
+    bool empty() const;  // lista vazia
+    //! ...
+    bool contains(const T& data) const;  // contém
+    //! ...
+    std::size_t find(const T& data) const;  // posição do dado
+    //! ...
+    std::size_t size() const;  // tamanho da lista
 
  private:
-    T* contents;
-    std::size_t size_;
-    std::size_t max_size_;
-    int begin_;  // indice do inicio (para fila circular) // take_idx
-    int end_;  // indice do fim (para fila circular) // put_idx
-    static const auto DEFAULT_SIZE = 10u;
+    class Node {  // Elemento
+     public:
+        explicit Node(const T& data):
+            data_{data}
+        {}
+
+        Node(const T& data, Node* next):
+            data_{data},
+            next_{next}
+        {}
+
+        T& data() {  // getter: dado
+            return data_;
+        }
+
+        const T& data() const {  // getter const: dado
+            return data_;
+        }
+
+        Node* next() {  // getter: próximo
+            return next_;
+        }
+
+        const Node* next() const {  // getter const: próximo
+            return next_;
+        }
+
+        void next(Node* node) {  // setter: próximo
+            next_ = node;
+        }
+
+     private:
+        T data_;
+        Node* next_{nullptr};
+    };
+
+    Node* end() {  // último nodo da lista
+        auto it = head;
+        for (auto i = 1u; i < size(); ++i) {
+            it = it->next();
+        }
+        return it;
+    }
+
+    Node* head{nullptr};
+    std::size_t size_{0u};
 };
 
 }  // namespace structures
 
 #endif
-
-template<typename T>
-structures::ArrayQueue<T>::ArrayQueue() {
-    contents = new T[DEFAULT_SIZE];
-    begin_ = size_ = 0;
-    end_ = -1;
-}
-
-template<typename T>
-structures::ArrayQueue<T>::ArrayQueue(std::size_t max) {
-    max_size_ = max;
-    contents = new T[max];
-    begin_ = size_ = 0;
-    end_ = -1;
-}
-
-template<typename T>
-structures::ArrayQueue<T>::~ArrayQueue() {
-    delete[] contents;
-}
-
-template<typename T>
-void structures::ArrayQueue<T>::enqueue(const T &data) {
-    if (full()) {
-        throw std::out_of_range("fila esta cheia");
-    } else {
-        end_ = ((end_ + 1) % max_size_);
-        contents[end_] = data;
-        size_++;
-    }
-}
-
-template<typename T>
-T structures::ArrayQueue<T>::dequeue() {
-    if (empty()) {
-        throw std::out_of_range("fila esta vazia");
-    } else {
-        T old_value = contents[begin_];
-        begin_ = ((begin_ + 1) % max_size_);
-        size_--;
-        return old_value;
-    }
-}
-
-template<typename T>
-T &structures::ArrayQueue<T>::back() {
-    if (empty()) {
-        throw std::out_of_range("fila esta vazia");
-    } else {
-        return contents[end_];
-    }
-}
-
-template<typename T>
-void structures::ArrayQueue<T>::clear() {
-    begin_ = size_ = 0;
-    end_ = -1;
-}
-
-template<typename T>
-std::size_t structures::ArrayQueue<T>::size() {
-    return size_;
-}
-
-template<typename T>
-std::size_t structures::ArrayQueue<T>::max_size() {
-    return max_size_;
-}
-
-template<typename T>
-bool structures::ArrayQueue<T>::empty() {
-    return (size_ == 0);
-}
-
-template<typename T>
-bool structures::ArrayQueue<T>::full() {
-    return (size_ == max_size_);
-}
+  

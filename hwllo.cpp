@@ -18,6 +18,8 @@
 // comentario
 
 /* 
+auto T = o T vai ser um tipo automatico
+
 multiplo coment
 
 g++ -std=c++11 arquivo.cpp
