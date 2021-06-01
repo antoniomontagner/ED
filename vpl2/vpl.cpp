@@ -172,7 +172,15 @@ return 0;
 
 template<typename T>
 std::size_t structures::ArrayList<T>::find(const T& data) const {
-    return 0;
+    std::size_t i = 0;
+    while (i < size_) {
+        if (contents[i] == data) {
+            break;
+        }
+        i++;    
+    }
+    return i;
+    
 }
 
 template<typename T>

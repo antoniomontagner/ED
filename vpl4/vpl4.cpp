@@ -1,4 +1,3 @@
-// Copyright [2021] Allan Soares
 
 #ifndef STRUCTURES_ARRAY_LIST_H
 #define STRUCTURES_ARRAY_LIST_H

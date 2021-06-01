@@ -1,0 +1,302 @@
+\hypertarget{_proj1_8cpp}{}\doxysection{Proj1.\+cpp File Reference}
+\label{_proj1_8cpp}\index{Proj1.cpp@{Proj1.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_proj1_8cpp_a97a2d9720dc8df1265267e65dbf69692}{owner}}~= $<$ antoniomontagner309@gmail.\+com $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_proj1_8cpp_aa8561d40cf7d41f3261e32139bb5b729}{nome\+\_\+arq}} ()
+\begin{DoxyCompactList}\small\item\em retornar o nome do arquivo xml a ser utilizado \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_proj1_8cpp_a5acc883f2764e54a4cea5e0cdf576e54}{get\+\_\+nome}} (std\+::fstream \&file, std\+::list$<$ std\+::string $>$ \&list\+\_\+nome)
+\begin{DoxyCompactList}\small\item\em instancias que serão utilizadas e a serem completadas \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_proj1_8cpp_a5d54684b7ab07257445ba8f1d84137f5}{get\+\_\+altura}} (std\+::fstream \&file, std\+::list$<$ std\+::string $>$ \&list\+\_\+altura)
+\begin{DoxyCompactList}\small\item\em get\+\_\+altura abre o arquivo e conta suas linhas para pegar a altura e colocar na lista de retorno. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_proj1_8cpp_aa8ad12a3f7f4971a1035227746139b7c}{get\+\_\+comprimento}} (std\+::fstream \&file, std\+::list$<$ std\+::string $>$ \&list\+\_\+comprimento)
+\begin{DoxyCompactList}\small\item\em abre o arquivo e conta suas linhas para pegar o comprimento e colocar na lista \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_proj1_8cpp_a8c616cc0e83f7f051f594a46a772ad79}{get\+\_\+data}} (std\+::fstream \&file, std\+::list$<$ std\+::string $>$ \&list\+\_\+dado, std\+::list$<$ std\+::string $>$ list\+\_\+altura)
+\begin{DoxyCompactList}\small\item\em verificar se o arquivo X\+ML passado \char`\"{}file\char`\"{} é valido, \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_proj1_8cpp_a0cbf21a6098e6e1b71cfe48adeb26e94}{matrix\+\_\+Q}} (std\+::string name, std\+::string altura, std\+::string comprimento, std\+::string data)
+\begin{DoxyCompactList}\small\item\em retorna a quantidade de elementos da matriz em um escopo de altura X comprimento e utilizando a lista de dados do X\+ML passado \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_proj1_8cpp_a0a781f53fc27d35eca5b92824c29d286}{verificar}} (std\+::fstream \&file)
+\begin{DoxyCompactList}\small\item\em verificar o se existe o arq xml, caso não, retorna erro junto com uma mensagem de erro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_proj1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_proj1_8cpp_a97a2d9720dc8df1265267e65dbf69692}\label{_proj1_8cpp_a97a2d9720dc8df1265267e65dbf69692}} 
+\index{Proj1.cpp@{Proj1.cpp}!owner@{owner}}
+\index{owner@{owner}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{owner}{owner}}
+{\footnotesize\ttfamily \#define owner~= $<$ antoniomontagner309@gmail.\+com $>$}
+
+\hypertarget{_proj1_8cpp_autotoc_md0}{}\doxyparagraph{Copyright \mbox{[}2021\mbox{]} $<$\+Antonio S M$>$}\label{_proj1_8cpp_autotoc_md0}
+\begin{DoxyVersion}{Version}
+19.\+20.\+37.\+42
+\end{DoxyVersion}
+\hypertarget{_proj1_8cpp_autotoc_md1}{}\doxyparagraph{Projeto I -\/ processamento de X\+M\+L com imagens binárias}\label{_proj1_8cpp_autotoc_md1}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_proj1_8cpp_a5d54684b7ab07257445ba8f1d84137f5}\label{_proj1_8cpp_a5d54684b7ab07257445ba8f1d84137f5}} 
+\index{Proj1.cpp@{Proj1.cpp}!get\_altura@{get\_altura}}
+\index{get\_altura@{get\_altura}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_altura()}{get\_altura()}}
+{\footnotesize\ttfamily int get\+\_\+altura (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{file,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{list\+\_\+altura }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+altura abre o arquivo e conta suas linhas para pegar a altura e colocar na lista de retorno. 
+
+\hypertarget{_proj1_8cpp_autotoc_md4}{}\doxysubsubsection{pegar a altura e colocar na lista}\label{_proj1_8cpp_autotoc_md4}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em list\+\_\+altura} & \\
+\hline
+\end{DoxyParams}
+verificar se esta aberto o arquivo e pegar altura
+
+
+\begin{DoxyParams}{Parameters}
+{\em comprimento} & \\
+\hline
+\end{DoxyParams}
+enquanto a posicao da tag \char`\"{}height\char`\"{} estiver diferente da posição atual ~\newline
+
+
+\char`\"{}line.\+find() \char`\"{} pegar altura
+
+\char`\"{}line\mbox{[}pos+1\mbox{]}\char`\"{} adinionar no fim um marcador \char`\"{}@\char`\"{}
+
+atualizar comprimento + linha atual
+
+fechar o arquivo apos criar a lista com os dados para retorno
+
+\begin{DoxyReturn}{Returns}
+list\+\_\+altura.\+size()
+\end{DoxyReturn}
+\mbox{\Hypertarget{_proj1_8cpp_aa8ad12a3f7f4971a1035227746139b7c}\label{_proj1_8cpp_aa8ad12a3f7f4971a1035227746139b7c}} 
+\index{Proj1.cpp@{Proj1.cpp}!get\_comprimento@{get\_comprimento}}
+\index{get\_comprimento@{get\_comprimento}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_comprimento()}{get\_comprimento()}}
+{\footnotesize\ttfamily int get\+\_\+comprimento (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{file,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{list\+\_\+comprimento }\end{DoxyParamCaption})}
+
+
+
+abre o arquivo e conta suas linhas para pegar o comprimento e colocar na lista 
+
+\hypertarget{_proj1_8cpp_autotoc_md5}{}\doxysubsubsection{pegar o comprimento e colocar na lista}\label{_proj1_8cpp_autotoc_md5}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em list\+\_\+comprimento} & \\
+\hline
+\end{DoxyParams}
+pegar comprimento
+
+altura
+
+\char`\"{}line.\+find()\char`\"{} procurar tag de comprimento
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+pegar comprimento
+
+\char`\"{}line\mbox{[}pos+1\mbox{]}\char`\"{} adinionar no fim um marcador \char`\"{}@\char`\"{}
+
+fechar o arquivo apos criar a lista com os dados para retorno
+
+\begin{DoxyReturn}{Returns}
+list\+\_\+comprimento.\+size()
+\end{DoxyReturn}
+\mbox{\Hypertarget{_proj1_8cpp_a8c616cc0e83f7f051f594a46a772ad79}\label{_proj1_8cpp_a8c616cc0e83f7f051f594a46a772ad79}} 
+\index{Proj1.cpp@{Proj1.cpp}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily int get\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{file,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{list\+\_\+dado,  }\item[{std\+::list$<$ std\+::string $>$}]{list\+\_\+altura }\end{DoxyParamCaption})}
+
+
+
+verificar se o arquivo X\+ML passado \char`\"{}file\char`\"{} é valido, 
+
+\hypertarget{_proj1_8cpp_autotoc_md6}{}\doxysubsubsection{pegar os dados e colocar na lista}\label{_proj1_8cpp_autotoc_md6}
+\hypertarget{_proj1_8cpp_autotoc_md11}{}\doxyparagraph{get\+\_\+data}\label{_proj1_8cpp_autotoc_md11}
+pegar os dados do arquivo passado em um escopo diferente do primeiro elemento de \char`\"{}list\+\_\+altura\char`\"{},
+
+retorna-\/los em uma lista \char`\"{}list\+\_\+dado\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em file,list\+\_\+dado,list\+\_\+altura} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list\+\_\+dado.\+size()
+\end{DoxyReturn}
+\mbox{\Hypertarget{_proj1_8cpp_a5acc883f2764e54a4cea5e0cdf576e54}\label{_proj1_8cpp_a5acc883f2764e54a4cea5e0cdf576e54}} 
+\index{Proj1.cpp@{Proj1.cpp}!get\_nome@{get\_nome}}
+\index{get\_nome@{get\_nome}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_nome()}{get\_nome()}}
+{\footnotesize\ttfamily int get\+\_\+nome (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{file,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{list\+\_\+nome }\end{DoxyParamCaption})}
+
+
+
+instancias que serão utilizadas e a serem completadas 
+
+pegar os nomes que estão no arquivo X\+ML e colocar em uma lista\hypertarget{_proj1_8cpp_autotoc_md3}{}\doxysubsubsection{pegar os nomes que estão no arquivo e colocar na lista}\label{_proj1_8cpp_autotoc_md3}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em list\+\_\+nome} & \\
+\hline
+\end{DoxyParams}
+pega nome da imagem
+
+\char`\"{}line.\+find()\char`\"{} procura o inicio do nome usando a tag $<$name$>$
+
+\char`\"{}line\mbox{[}pos+1\mbox{]}\char`\"{} adinionar no fim um marcador \char`\"{}@\char`\"{}
+
+\char`\"{}list\+\_\+nome.\+push\+\_\+back(name)\char`\"{} adiciona o nome na lista de nomes
+
+fechar o arquivo apor fazer a verificação e obter o nome
+
+\begin{DoxyReturn}{Returns}
+list\+\_\+nome.\+size()
+\end{DoxyReturn}
+\mbox{\Hypertarget{_proj1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_proj1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Proj1.cpp@{Proj1.cpp}!main@{main}}
+\index{main@{main}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{_proj1_8cpp_autotoc_md9}{}\doxysubsection{M\+A\+IN}\label{_proj1_8cpp_autotoc_md9}
+\char`\"{}verificar(file)\char`\"{} retorna 0 junto com uma mensagem de erro caso o arquivo nao seja válido
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+\_\+lista} & \\
+\hline
+{\em altura\+\_\+lista} & \\
+\hline
+{\em comprimento\+\_\+lista} & \\
+\hline
+{\em dados\+\_\+lista} & recebe o nome da imagem, altura, comprimento, dados\\
+\hline
+\end{DoxyParams}
+\hypertarget{Proj1.cpp_autotoc_md10}{}\doxysubsubsection{obter dados dos arquivos}\label{Proj1.cpp_autotoc_md10}
+pegar os dados nome, altura, comprimento e a matriz
+
+abrir a imagem
+
+pegar o nome da imagem do arquivo
+
+pegar altura da imagem do arquivo
+
+pegar comprimento da imagem do arquivo
+
+pegar dados da imagem do arquivo
+
+retorno da quantidade de elementos específico\mbox{\Hypertarget{_proj1_8cpp_a0cbf21a6098e6e1b71cfe48adeb26e94}\label{_proj1_8cpp_a0cbf21a6098e6e1b71cfe48adeb26e94}} 
+\index{Proj1.cpp@{Proj1.cpp}!matrix\_Q@{matrix\_Q}}
+\index{matrix\_Q@{matrix\_Q}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{matrix\_Q()}{matrix\_Q()}}
+{\footnotesize\ttfamily int matrix\+\_\+Q (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{altura,  }\item[{std\+::string}]{comprimento,  }\item[{std\+::string}]{data }\end{DoxyParamCaption})}
+
+
+
+retorna a quantidade de elementos da matriz em um escopo de altura X comprimento e utilizando a lista de dados do X\+ML passado 
+
+\hypertarget{_proj1_8cpp_autotoc_md7}{}\doxysubsubsection{retorna a quantidade de elementos da matriz}\label{_proj1_8cpp_autotoc_md7}
+
+\begin{DoxyParams}{Parameters}
+{\em name,altura,comprimento,data} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyParams}{Parameters}
+{\em comp\+\_\+} & \\
+\hline
+{\em alt\+\_\+} & \\
+\hline
+\end{DoxyParams}
+cria uma lista para armazenar os elementos da matriz
+
+armazena o elemento da coordenada \char`\"{}push(std\+::make\+\_\+pair(i, k))\char`\"{}
+
+armazenar a lista em uma temporaria para retorno e limpar a lista principal
+
+verificar se o comprimento da lista temporaria e maior ou igual a 0
+
+verificar se a altura da lista temporaria e menor que a altura passada
+
+verificar se a altura da lista temporaria e maior ou igual a 0
+
+verificar se o comprimento da lista temporaria e menor que o comprimento passado
+
+enfileira
+
+\begin{DoxyReturn}{Returns}
+n\+\_\+elementos
+\end{DoxyReturn}
+\mbox{\Hypertarget{_proj1_8cpp_aa8561d40cf7d41f3261e32139bb5b729}\label{_proj1_8cpp_aa8561d40cf7d41f3261e32139bb5b729}} 
+\index{Proj1.cpp@{Proj1.cpp}!nome\_arq@{nome\_arq}}
+\index{nome\_arq@{nome\_arq}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{nome\_arq()}{nome\_arq()}}
+{\footnotesize\ttfamily std\+::string nome\+\_\+arq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+retornar o nome do arquivo xml a ser utilizado 
+
+\hypertarget{_proj1_8cpp_autotoc_md2}{}\doxyparagraph{retornar nome do arquivo}\label{_proj1_8cpp_autotoc_md2}
+\mbox{\Hypertarget{_proj1_8cpp_a0a781f53fc27d35eca5b92824c29d286}\label{_proj1_8cpp_a0a781f53fc27d35eca5b92824c29d286}} 
+\index{Proj1.cpp@{Proj1.cpp}!verificar@{verificar}}
+\index{verificar@{verificar}!Proj1.cpp@{Proj1.cpp}}
+\doxysubsubsection{\texorpdfstring{verificar()}{verificar()}}
+{\footnotesize\ttfamily bool verificar (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+verificar o se existe o arq xml, caso não, retorna erro junto com uma mensagem de erro. 
+
+\hypertarget{_proj1_8cpp_autotoc_md8}{}\doxysubsubsection{verificar se existe o arq xml, caso não, retorna 0 junto com uma mensagem de erro}\label{_proj1_8cpp_autotoc_md8}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+\end{DoxyParams}
+primeiro vamos verificar os erros ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em stack} & \\
+\hline
+{\em read} & \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+usar getline para percorrer a string
+
+checar se é topo da lista para continuar ou nao
+
+caso nao seja topo da lista, passa erro e retorna
+
+fechar o arquivo apor fazer a verificação
+
+\begin{DoxyReturn}{Returns}
+error
+\end{DoxyReturn}
